@@ -1,4 +1,9 @@
 import './App.css'
+
+const numericButtonClasses = 'btn btn-info w-100'
+const operatorButtonClasses = 'btn btn-warning w-100'
+const specialButtonClasses = 'btn btn-danger w-100'
+
 function App() {
 
   return (
@@ -9,42 +14,105 @@ function App() {
         <table className='center'>
           <tbody>
             <tr>
-              <td colSpan={4}>11</td>
+              <td className='text-end' colSpan={4}><h2>0</h2></td>
             </tr>
 
             <tr>
-              <td>21</td>
-              <td>22</td>
-              <td>23</td>
-              <td>24</td>
+              <td><button
+                  type='button'
+                  className={specialButtonClasses}
+                  >C</button></td>
+              <td><button
+                  type='button'
+                  className={specialButtonClasses}
+                  >{'<'}</button></td>
+              <td><button
+                  type='button'
+                  className={operatorButtonClasses}
+                  >%</button></td>
+              <td><button
+                  type='button'
+                  className={operatorButtonClasses}
+                  >/</button></td>
             </tr>
 
             <tr>
-              <td>31</td>
-              <td>32</td>
-              <td>33</td>
-              <td>33</td>
+              <td><button
+                  type='button'
+                  className={numericButtonClasses}
+                  >7</button></td>
+              <td><button
+                  type='button'
+                  className={numericButtonClasses}
+                  >8</button></td>
+              <td><button
+                  type='button'
+                  className={numericButtonClasses}
+                  >9</button></td>
+              <td>
+              <button
+                  type='button'
+                  className={operatorButtonClasses}
+                  >x</button>
+              </td>
             </tr>
 
             <tr>
-              <td>41</td>
-              <td>42</td>
-              <td>43</td>
-              <td>43</td>
+              <td><button
+                  type='button'
+                  className={numericButtonClasses}
+                  >4</button></td>
+              <td><button
+                  type='button'
+                  className={numericButtonClasses}
+                  >5</button></td>
+              <td><button
+                  type='button'
+                  className={numericButtonClasses}
+                  >6</button></td>
+              <td>
+              <button
+                  type='button'
+                  className={operatorButtonClasses}
+                  >-</button>
+              </td>
             </tr>
 
             <tr>
-              <td>51</td>
-              <td>52</td>
-              <td>53</td>
-              <td>53</td>
+              <td><button
+                  type='button'
+                  className={numericButtonClasses}
+                  >1</button></td>
+              <td><button
+                  type='button'
+                  className={numericButtonClasses}
+                  >2</button></td>
+              <td><button
+                  type='button'
+                  className={numericButtonClasses}
+                  >3</button></td>
+              <td><button
+                  type='button'
+                  className={operatorButtonClasses}
+                  >+</button></td>
             </tr>
 
             <tr>
-              <td>61</td>
-              <td>62</td>
-              <td>63</td>
-              <td>63</td>
+              <td colSpan={2}><button
+                  type='button'
+                  className={numericButtonClasses}
+                  >0</button>
+              </td>
+              <td>
+              <button
+                  type='button'
+                  className={numericButtonClasses}
+                  >.</button>
+              </td>
+              <td><button
+                  type='button'
+                  className={specialButtonClasses}
+                  >=</button></td>
             </tr>
           </tbody>
         </table>
