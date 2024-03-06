@@ -5,6 +5,8 @@ const numericButtonClasses = 'btn btn-info w-100'
 const operationButtonClases = 'btn btn-warning w-100'
 const specialButtonClasses = 'btn btn-danger w-100'
 
+
+
 function App() {
   const [display, setDisplay] = useState({
     value: '0',
@@ -12,6 +14,8 @@ function App() {
     operator: '',
     previousValue: '0'
   })
+
+
 
   const updateDisplay = (value) => {
     if (value === '.') {
@@ -74,11 +78,13 @@ function App() {
     if (display.operator === '') {
       return
     }
-    const result = eval(display.previousValue + display.operator + display.value)
+    let result = eval(display.previousValue + display.operator + display.value)
+    result = result + ""
     setDisplay({
       ...display,
-      value: limit(result + ""),
+      value: limit(result),
       operator: '', 
+      hasPoint:result.includes('.'),
       previousValue: '0'
     })
   }
@@ -87,6 +93,14 @@ function App() {
     return string.slice(0, length)
   }
   
+class buttonsFunctions = {
+  updateDisplay,
+  clearDisplay,
+  deleteLastCharacter,
+  setOperator,
+  calculate
+}
+
   return (
       <div>
         <h1>Calculator</h1>
