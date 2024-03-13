@@ -1,5 +1,5 @@
 export const buttons = [
-    {/**primeros cuatro botones */}
+    /**primeros cuatro botones */
     [
       {
         class: 'special',
@@ -16,13 +16,13 @@ export const buttons = [
       {
         class: 'operator',
         label:'%',
-        function: 'setOperador',
+        function: 'setOperator',
         columns: 1
       },
       {
         class: 'operator',
         label:'/',
-        function:'setOperador',
+        function:'setOperator',
         columns: 1
       }
     ],
