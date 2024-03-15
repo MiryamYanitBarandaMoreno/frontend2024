@@ -1,34 +1,52 @@
 import { useState } from 'react'
 
 function App() {
-  const [username, setUsername]= useState('')
+  const [inputsForm, setInputForm]=useState({
+    username:'',
+    password:''
+  })
 
-  const hadleUsernameChange = (event)=>{
-    setUsername(event.target.value)
+  const handleinputsForm = (event) => {
+    setInputForm({
+      ...inputsForm,
+      [event.target.name]:event.target.value
+    })
   }
-
-  const hadleSubmit=(e)=>{
+  
+  const handleSubmit=(e)=>{
     e.preventDefault()
-    console.log("Username:", username)
-    console.log('Formulario enviado')
   }
 
   return (
     <>
-      <div>
+      <div className='text-center'>
         <h1>Inputs</h1>
         <hr/>
-        <form onSubmit={(e)=>hadleSubmit(e)}>
+        <form onSubmit={(e)=>handleSubmit(e)} className='w-50 mx-auto'>
           <div>
             <label htmlFor='username'>Username</label>
-            <input onChange={(event)=>hadleUsernameChange(event)} id="username" type="text" value={username} />
+            <input onChange={(event)=>handleinputsForm(event)} 
+            id="username" 
+            name='username' 
+            type="text" 
+            value={inputsForm.username} />
           </div>
-          <div>
+          <div className='mb-3'>
             <label htmlFor='password'>Password</label>
-            <input id="password" type="password" />
+            <input onChange={(event)=>handleinputsForm(event)} 
+            id="password" 
+            name='password' 
+            type="password" 
+            value={inputsForm.password}/>
           </div>
           <button type='submit'>Submit</button>
         </form>
+
+        <hr />
+        <div><h6>Inicio de sesion con las siguientes credenciales:</h6>
+        <p>Username:{inputsForm.username}</p>
+        <p>Password:{inputsForm.password}</p>
+        </div>
       </div>
     </>
   )
