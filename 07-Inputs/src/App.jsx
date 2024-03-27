@@ -1,20 +1,16 @@
-import { useState } from 'react'
+import { useForm } from "./Hooks/useForm"
+
+const inputsData = {
+  username:'',
+  password:''
+}
 
 function App() {
-  const [inputsForm, setInputForm]=useState({
-    username:'',
-    password:''
-  })
-
-  const handleinputsForm = (event) => {
-    setInputForm({
-      ...inputsForm,
-      [event.target.name]:event.target.value
-    })
-  }
+  const [values, handleInputChange,inputsReset] = useForm(inputsData)
   
   const handleSubmit=(e)=>{
     e.preventDefault()
+    inputsReset()
   }
 
   return (
@@ -25,27 +21,27 @@ function App() {
         <form onSubmit={(e)=>handleSubmit(e)} className='w-50 mx-auto'>
           <div>
             <label htmlFor='username'>Username</label>
-            <input onChange={(event)=>handleinputsForm(event)} 
+            <input onChange={(event)=>handleInputChange(event)} 
             id="username" 
             name='username' 
             type="text" 
-            value={inputsForm.username} />
+            value={values.username} />
           </div>
           <div className='mb-3'>
             <label htmlFor='password'>Password</label>
-            <input onChange={(event)=>handleinputsForm(event)} 
+            <input onChange={(event)=>handleInputChange(event)} 
             id="password" 
             name='password' 
             type="password" 
-            value={inputsForm.password}/>
+            value={values.password}/>
           </div>
           <button type='submit'>Submit</button>
         </form>
 
         <hr />
         <div><h6>Inicio de sesion con las siguientes credenciales:</h6>
-        <p>Username:{inputsForm.username}</p>
-        <p>Password:{inputsForm.password}</p>
+        <p>Username:{values.username}</p>
+        <p>Password:{values.password}</p>
         </div>
       </div>
     </>
