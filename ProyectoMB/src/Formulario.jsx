@@ -49,12 +49,12 @@ const Formulario = () => {
             <textarea className="form-control" id="descripcion" name="descripcion" value={formData.descripcion} onChange={handleChange} />
           </div>
           <div className="mb-3">
-            <label htmlFor="seleccion" className="form-label">Seleccionar</label>
+            <label htmlFor="seleccion" className="form-label">Genero</label>
             <select className="form-select" id="seleccion" name="seleccion" value={formData.seleccion} onChange={handleChange}>
               <option value="">Selecciona una opción</option>
-              <option value="opcion1">Opción 1</option>
-              <option value="opcion2">Opción 2</option>
-              <option value="opcion3">Opción 3</option>
+              <option value="opcion1">Femenino</option>
+              <option value="opcion2">Masculino</option>
+              <option value="opcion3">Otro</option>
             </select>
           </div>
           <div className="mb-3">

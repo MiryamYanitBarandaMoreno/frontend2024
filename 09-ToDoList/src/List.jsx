@@ -4,7 +4,7 @@ const List = ({taskList}) => {
   return (
     <>
     
-    <div className="row m-2">
+    <div className="row">
 
     <div className="col-6">
     <h4>Task</h4>
@@ -15,7 +15,7 @@ const List = ({taskList}) => {
     </div>
 
     <div className="col">
-    <h4>Actions</h4>
+    <h4>Locations</h4>
     </div>
 
     </div>
@@ -23,8 +23,7 @@ const List = ({taskList}) => {
         taskList.map((task)=>
             <ListItem 
             key={task.id}
-            task={task.task}
-            limit={task.limit}
+            task={task}
             />
         )
     }
