@@ -3,9 +3,9 @@ const getweather =async(cities='Tuxtepec')=>{
     const url=`http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${cities}&aqi=no`
     const response = await fetch(url)
     const weather = await response.json()
-
+    
     //console.log(weather)
     return weather
-  }
+   }
 
-  export default getweather
+export default getweather

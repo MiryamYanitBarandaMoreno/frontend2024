@@ -1,17 +1,16 @@
-/*Se pega el codigo de otro proyecto*/
 import { useState } from "react"
 
-export const useForm = (initialState = {}) => {
+export const useForm = (initialState = {} )=> {
     const [values, setValues] = useState(initialState)
 
-    const handleInputChange = ({target}) => {
+    const handleInputChange=({target})=>{
         setValues({
             ...values,
-            [target.name]:target.value
+            [target.name]: target.value
         })
     }
 
-    const reset = () => {
+    const reset =()=>{
         setValues(initialState)
     }
 

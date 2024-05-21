@@ -1,22 +1,21 @@
-const Search=({values,handleInputChange,reset, cities, setCities})=> {
+const Search=({values,handleInputChange,reset, city, setCity})=> {
     const handleSearch = () => {
-        setCities(values.searchcities)
+        setCity(values.searchCity)
         reset()
     }
     return(
         <div className="input-group mb-3">
-            <label className="input-group-text" htmlFor="searchcities">cities</label>
+            <label className="input-group-text" htmlFor="searchCity">City</label>
             <input 
             className="form-control" 
-            type="text" 
-            name="searchcities" 
-            id="searchcities"
+            name="searchCity" 
+            id="searchCity"
             onChange={handleInputChange}
-            value={values.searchcities}>
+            type="text" 
+            value={values.searchCity}>
             </input>
-            <button className="btn btn-primary" onClick={handleSearch}>Search</button>
+            <button onClick={handleSearch} className="btn btn-primary">Search</button>
         </div>
     )
 }
-
 export default Search
